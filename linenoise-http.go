@@ -23,6 +23,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -31,8 +32,16 @@ import (
 	"github.com/markcornick/linenoise"
 )
 
+type Noise struct {
+	Text string
+}
+
+type Error struct {
+	Message string
+}
+
 func main() {
-	http.HandleFunc("/noise", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/v1/noise", func(w http.ResponseWriter, r *http.Request) {
 		length, err := strconv.Atoi(r.FormValue("length"))
 		if err != nil {
 			length = 16
@@ -52,9 +61,18 @@ func main() {
 		p := linenoise.Parameters{Length: length, Upper: upper, Lower: lower, Digit: digit}
 		noise, err := linenoise.Noise(p)
 		if err != nil {
-			fmt.Fprintln(w, err)
+			e := &Error{Message: err.Error()}
+			j, _ := json.Marshal(e)
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusUnprocessableEntity)
+			fmt.Fprintln(w, string(j))
+		} else {
+			n := &Noise{Text: noise}
+			j, _ := json.Marshal(n)
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusOK)
+			fmt.Fprintln(w, string(j))
 		}
-		fmt.Fprintln(w, noise)
 	})
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
