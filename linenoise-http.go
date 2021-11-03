@@ -37,7 +37,19 @@ func main() {
 		if err != nil {
 			length = 16
 		}
-		p := linenoise.Parameters{Length: length, Upper: true, Lower: true, Digit: true}
+		upper, err := strconv.ParseBool(r.FormValue("upper"))
+		if err != nil {
+			upper = true
+		}
+		lower, err := strconv.ParseBool(r.FormValue("lower"))
+		if err != nil {
+			lower = true
+		}
+		digit, err := strconv.ParseBool(r.FormValue("digit"))
+		if err != nil {
+			digit = true
+		}
+		p := linenoise.Parameters{Length: length, Upper: upper, Lower: lower, Digit: digit}
 		noise, err := linenoise.Noise(p)
 		if err != nil {
 			fmt.Fprintln(w, err)
