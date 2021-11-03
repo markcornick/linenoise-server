@@ -26,13 +26,18 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/markcornick/linenoise"
 )
 
 func main() {
 	http.HandleFunc("/noise", func(w http.ResponseWriter, r *http.Request) {
-		p := linenoise.Parameters{Length: 16, Upper: true, Lower: true, Digit: true}
+		length, err := strconv.Atoi(r.FormValue("length"))
+		if err != nil {
+			length = 16
+		}
+		p := linenoise.Parameters{Length: length, Upper: true, Lower: true, Digit: true}
 		noise, err := linenoise.Noise(p)
 		if err != nil {
 			fmt.Fprintln(w, err)
