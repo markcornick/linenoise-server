@@ -7,7 +7,7 @@ linenoise-server is a very simple web server that provides
 
 There is only one method, `GET /noise` called thus:
 
-`curl http://HOSTNAME:8080/noise?length=x&upper=x&lower=x&digit=x`
+`curl http://HOSTNAME:8080/v1/noise?length=x&upper=x&lower=x&digit=x`
 
 If any parameter is not specified, a default of 16 is used for `length`,
 and `true` for `upper`, `lower` and/or `digit`.
