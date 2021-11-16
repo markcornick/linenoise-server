@@ -1,6 +1,6 @@
-# linenoise-http
+# linenoise-server
 
-linenoise-http is a very simple web server that provides
+linenoise-server is a very simple web server that provides
 [linenoise](https://github.com/markcornick/linenoise) as a service.
 
 ## Usage
@@ -24,5 +24,5 @@ conduct.
 
 ## License
 
-linenoise-http is available as open source under the terms of the MIT
+linenoise-server is available as open source under the terms of the MIT
 License.

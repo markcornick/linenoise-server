@@ -1,4 +1,4 @@
-module github.com/markcornick/linenoise-http
+module github.com/markcornick/linenoise-server
 
 go 1.17
 
