@@ -1,7 +1,7 @@
 # linenoise-server
 
 linenoise-server is a very simple web server that provides
-[linenoise](https://github.com/markcornick/linenoise) as a service.
+[linenoise](https://git.sr.ht/~mcornick/linenoise) as a service.
 
 ## Usage
 
@@ -14,8 +14,8 @@ and `true` for `upper`, `lower` and/or `digit`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at
-https://github.com/markcornick/linenoise.
+Bug reports are welcome on Sourcehut at
+https://todo.sr.ht/~mcornick/linenoise.
 
 This project is intended to be a safe, welcoming space for
 collaboration, and contributors are expected to adhere to the
