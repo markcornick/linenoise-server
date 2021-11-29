@@ -29,7 +29,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"git.sr.ht/~mcornick/linenoise"
+	"github.com/markcornick/linenoise"
 )
 
 type Noise struct {

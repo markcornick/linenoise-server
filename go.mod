@@ -1,5 +1,5 @@
-module git.sr.ht/~mcornick/linenoise-server
+module github.com/markcornick/linenoise-server
 
 go 1.17
 
-require git.sr.ht/~mcornick/linenoise v1.0.1
+require github.com/markcornick/linenoise v1.0.0

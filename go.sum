@@ -1,2 +1,2 @@
-git.sr.ht/~mcornick/linenoise v1.0.1 h1:11EwULunARM28e5Gm7GTEyze7V9iSWt1FujmBPVc5MA=
-git.sr.ht/~mcornick/linenoise v1.0.1/go.mod h1:0L5OcjCIOSH5nyE+zZEYmE3Jnyt1uUHco73YObvkrjs=
+github.com/markcornick/linenoise v1.0.0 h1:psP4sU8Rwcfj1+DvNg4uX/xw/25VvCA4XBxWYvinW30=
+github.com/markcornick/linenoise v1.0.0/go.mod h1:e/2oP+iAPODCF0fzkAU9BsSp3hSZawKJkpzOUhvhip8=
